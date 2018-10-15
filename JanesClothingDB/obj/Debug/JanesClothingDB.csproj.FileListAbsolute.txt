@@ -1,0 +1,28 @@
+C:\Users\micha\Source\Repos\M9ActivitiesDB\JanesClothingDB\bin\Debug\JanesClothingDB.exe.config
+C:\Users\micha\Source\Repos\M9ActivitiesDB\JanesClothingDB\bin\Debug\JanesClothingDB.exe
+C:\Users\micha\Source\Repos\M9ActivitiesDB\JanesClothingDB\bin\Debug\JanesClothingDB.pdb
+C:\Users\micha\Source\Repos\M9ActivitiesDB\JanesClothingDB\obj\Debug\JanesClothingDB.csprojAssemblyReference.cache
+C:\Users\micha\Source\Repos\M9ActivitiesDB\JanesClothingDB\obj\Debug\JanesClothingDB.frmCustomerAdd.resources
+C:\Users\micha\Source\Repos\M9ActivitiesDB\JanesClothingDB\obj\Debug\JanesClothingDB.frmCustomersEdit.resources
+C:\Users\micha\Source\Repos\M9ActivitiesDB\JanesClothingDB\obj\Debug\JanesClothingDB.frmMainForm.resources
+C:\Users\micha\Source\Repos\M9ActivitiesDB\JanesClothingDB\obj\Debug\JanesClothingDB.frmProductDetails.resources
+C:\Users\micha\Source\Repos\M9ActivitiesDB\JanesClothingDB\obj\Debug\JanesClothingDB.frmProductEdit.resources
+C:\Users\micha\Source\Repos\M9ActivitiesDB\JanesClothingDB\obj\Debug\JanesClothingDB.Properties.Resources.resources
+C:\Users\micha\Source\Repos\M9ActivitiesDB\JanesClothingDB\obj\Debug\JanesClothingDB.csproj.GenerateResource.cache
+C:\Users\micha\Source\Repos\M9ActivitiesDB\JanesClothingDB\obj\Debug\JanesClothingDB.csproj.CoreCompileInputs.cache
+C:\Users\micha\Source\Repos\M9ActivitiesDB\JanesClothingDB\obj\Debug\JanesClothingDB.exe
+C:\Users\micha\Source\Repos\M9ActivitiesDB\JanesClothingDB\obj\Debug\JanesClothingDB.pdb
+C:\Users\micha\OneDrive\Documents\Visual Studio 2017\Projects\M9ActivitiesDB\JanesClothingDB\bin\Debug\JanesClothingDB.exe.config
+C:\Users\micha\OneDrive\Documents\Visual Studio 2017\Projects\M9ActivitiesDB\JanesClothingDB\bin\Debug\JanesClothingDB.exe
+C:\Users\micha\OneDrive\Documents\Visual Studio 2017\Projects\M9ActivitiesDB\JanesClothingDB\bin\Debug\JanesClothingDB.pdb
+C:\Users\micha\OneDrive\Documents\Visual Studio 2017\Projects\M9ActivitiesDB\JanesClothingDB\obj\Debug\JanesClothingDB.csprojAssemblyReference.cache
+C:\Users\micha\OneDrive\Documents\Visual Studio 2017\Projects\M9ActivitiesDB\JanesClothingDB\obj\Debug\JanesClothingDB.frmCustomerAdd.resources
+C:\Users\micha\OneDrive\Documents\Visual Studio 2017\Projects\M9ActivitiesDB\JanesClothingDB\obj\Debug\JanesClothingDB.frmCustomersEdit.resources
+C:\Users\micha\OneDrive\Documents\Visual Studio 2017\Projects\M9ActivitiesDB\JanesClothingDB\obj\Debug\JanesClothingDB.frmMainForm.resources
+C:\Users\micha\OneDrive\Documents\Visual Studio 2017\Projects\M9ActivitiesDB\JanesClothingDB\obj\Debug\JanesClothingDB.frmProductDetails.resources
+C:\Users\micha\OneDrive\Documents\Visual Studio 2017\Projects\M9ActivitiesDB\JanesClothingDB\obj\Debug\JanesClothingDB.frmProductEdit.resources
+C:\Users\micha\OneDrive\Documents\Visual Studio 2017\Projects\M9ActivitiesDB\JanesClothingDB\obj\Debug\JanesClothingDB.Properties.Resources.resources
+C:\Users\micha\OneDrive\Documents\Visual Studio 2017\Projects\M9ActivitiesDB\JanesClothingDB\obj\Debug\JanesClothingDB.csproj.GenerateResource.cache
+C:\Users\micha\OneDrive\Documents\Visual Studio 2017\Projects\M9ActivitiesDB\JanesClothingDB\obj\Debug\JanesClothingDB.csproj.CoreCompileInputs.cache
+C:\Users\micha\OneDrive\Documents\Visual Studio 2017\Projects\M9ActivitiesDB\JanesClothingDB\obj\Debug\JanesClothingDB.exe
+C:\Users\micha\OneDrive\Documents\Visual Studio 2017\Projects\M9ActivitiesDB\JanesClothingDB\obj\Debug\JanesClothingDB.pdb
