@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+//main form need to access CustomersView.cs
+using JanesClothingDB.Presentation_Layer;
 
 namespace JanesClothingDB
 {
@@ -58,6 +60,13 @@ namespace JanesClothingDB
         private void frmMainForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void btnCustomersView_Click(object sender, EventArgs e)
+        {
+            frmCustomersView viewForm = new frmCustomersView();
+            viewForm.Show();
+            Hide();
         }
     }
 }

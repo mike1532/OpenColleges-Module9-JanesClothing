@@ -33,11 +33,12 @@
             this.btnExit = new System.Windows.Forms.Button();
             this.btnAddProduct = new System.Windows.Forms.Button();
             this.btnEditProduct = new System.Windows.Forms.Button();
+            this.btnCustomersView = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnAddCustomer
             // 
-            this.btnAddCustomer.Location = new System.Drawing.Point(44, 66);
+            this.btnAddCustomer.Location = new System.Drawing.Point(187, 124);
             this.btnAddCustomer.Name = "btnAddCustomer";
             this.btnAddCustomer.Size = new System.Drawing.Size(183, 56);
             this.btnAddCustomer.TabIndex = 0;
@@ -47,7 +48,7 @@
             // 
             // btnEditCustomer
             // 
-            this.btnEditCustomer.Location = new System.Drawing.Point(318, 66);
+            this.btnEditCustomer.Location = new System.Drawing.Point(187, 202);
             this.btnEditCustomer.Name = "btnEditCustomer";
             this.btnEditCustomer.Size = new System.Drawing.Size(183, 56);
             this.btnEditCustomer.TabIndex = 1;
@@ -57,7 +58,7 @@
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(195, 316);
+            this.btnExit.Location = new System.Drawing.Point(187, 425);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(183, 56);
             this.btnExit.TabIndex = 4;
@@ -67,7 +68,7 @@
             // 
             // btnAddProduct
             // 
-            this.btnAddProduct.Location = new System.Drawing.Point(44, 181);
+            this.btnAddProduct.Location = new System.Drawing.Point(187, 278);
             this.btnAddProduct.Name = "btnAddProduct";
             this.btnAddProduct.Size = new System.Drawing.Size(183, 56);
             this.btnAddProduct.TabIndex = 2;
@@ -77,7 +78,7 @@
             // 
             // btnEditProduct
             // 
-            this.btnEditProduct.Location = new System.Drawing.Point(318, 181);
+            this.btnEditProduct.Location = new System.Drawing.Point(187, 351);
             this.btnEditProduct.Name = "btnEditProduct";
             this.btnEditProduct.Size = new System.Drawing.Size(183, 56);
             this.btnEditProduct.TabIndex = 3;
@@ -85,11 +86,22 @@
             this.btnEditProduct.UseVisualStyleBackColor = true;
             this.btnEditProduct.Click += new System.EventHandler(this.btnEditProduct_Click);
             // 
+            // btnCustomersView
+            // 
+            this.btnCustomersView.Location = new System.Drawing.Point(187, 40);
+            this.btnCustomersView.Name = "btnCustomersView";
+            this.btnCustomersView.Size = new System.Drawing.Size(183, 56);
+            this.btnCustomersView.TabIndex = 5;
+            this.btnCustomersView.Text = "&View Customers";
+            this.btnCustomersView.UseVisualStyleBackColor = true;
+            this.btnCustomersView.Click += new System.EventHandler(this.btnCustomersView_Click);
+            // 
             // frmMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(578, 506);
+            this.Controls.Add(this.btnCustomersView);
             this.Controls.Add(this.btnEditProduct);
             this.Controls.Add(this.btnAddProduct);
             this.Controls.Add(this.btnExit);
@@ -111,5 +123,6 @@
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Button btnAddProduct;
         private System.Windows.Forms.Button btnEditProduct;
+        private System.Windows.Forms.Button btnCustomersView;
     }
 }

@@ -29,25 +29,107 @@ namespace JanesClothingDB.Presentation_Layer
         //when called, will populate the ListView control with rows from the Customers table
         public void DisplayCustomers()
         {
-            string selectQuery = " SELECT Customers.CustomersID, Categories.Category, Customers.FirstName, Customers.LastName, "
-                + " Customers.Address, Customers.Suburb, Customers.State, Customers.Postcode, "
-                + " Customers.Gender, Customers.SendCatalogue FROM Customers INNER JOIN "
-                + "Categories ON Customers.CustomerID = Categories.CategoryID";
+            string selectQuery = " SELECT Customers.CustomerID, Categories.Category, Customers.FirstName, Customers.LastName, "
+            + " Customers.Address, Customers.Suburb, Customers.State, Customers.Postcode, "
+            + " Customers.Gender, Customers.SendCatalogue FROM Customers INNER JOIN "
+            + "Categories ON Customers.CustomerID = Categories.CategoryID";
 
+            /*selectQuery = "SELECT Customers.CustomerID, Categories.Category, Customers.FirstName, Customers.LastName, ";
+            selectQuery = selectQuery + "Customers.Address, Customers.Suburb, Customers.State, Customers.Postcode, ";
+            selectQuery = selectQuery + "Customers.Gender, Customers.SendCatalogue ";
+            selectQuery = selectQuery + "FROM Customers INNER JOIN ";
+            selectQuery = selectQuery + "Categories ON Customers.CategoryID = Categories.CategoryID";*/
+            
             //calls DatabaseConnection method from ConnectionManager.cs file and instantiate DataReaderObject
             SqlConnection conn = ConnectionManager.DatabaseConnection();            
             SqlDataReader rdr = null;
 
             try
             {
+                //Open the connection, passes query of databse to cmd, executes query through SQLDataReader object
                 conn.Open();
                 SqlCommand cmd = new SqlCommand(selectQuery, conn);
-                //TO-DO finish method code
+                rdr = cmd.ExecuteReader();
+
+                //defines the variable list items (gender/send catalogue)
+                while (rdr.Read())
+                {
+                    //defaults male. changes to female if F is found
+                    string gender = "Male";
+                    if (rdr["Gender"].ToString() == "F")
+                    {
+                        gender = "Female";
+                    }
+
+                    //defaults to no, sets entry as a boolean, if true return yes
+                    string sendCatalogue = "No";
+                    bool sc = rdr.GetBoolean(rdr.GetOrdinal("SendCatalogue"));
+
+                    if (sc)
+                    {
+                        sendCatalogue = "Yes";
+                    }
+
+                    //calls parameterised customer constructor
+                    Customer customer = new Customer(int.Parse(rdr["CustomerID"].ToString()), rdr["FirstName"].ToString(),
+                                        rdr["LastName"].ToString(), rdr["Category"].ToString(), gender, rdr["Address"].ToString(),
+                                        rdr["Suburb"].ToString(), rdr["State"].ToString(), int.Parse(rdr["Postcode"].ToString()), sendCatalogue);
+
+                    //creates ListViewItems, then adds ListViewItems to lvCustomers
+                    ListViewItem lvi = new ListViewItem(customer.CustomerID.ToString());
+                    lvi.SubItems.Add(customer.FirstName);
+                    lvi.SubItems.Add(customer.LastName);
+                    lvi.SubItems.Add(customer.Address);
+                    lvi.SubItems.Add(customer.Suburb);
+                    lvi.SubItems.Add(customer.State);                                     
+                    lvi.SubItems.Add(customer.PostCode.ToString());
+                    lvi.SubItems.Add(customer.Gender);
+                    lvi.SubItems.Add(customer.Category);
+                    lvi.SubItems.Add(customer.SendCatalogue);
+
+                    lvCustomers.Items.Add(lvi);
+                }
+
+                //if null, close DataReader object and close connection
+                if (rdr != null)
+                    rdr.Close();
+                conn.Close();
+
             }
+
             catch (Exception ex)
             {
                 MessageBox.Show("Unsuccessfull" + ex);
+                //added an application exit cause if the program threw an exception it went into an infinite loop :/
+                Application.Exit();
             }
         }
+
+        private void frmCustomersView_Load(object sender, EventArgs e)
+        {
+            DisplayCustomers();
+        }
+
+        private void frmCustomersView_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            frmMainForm mainForm = new frmMainForm();
+            mainForm.Show();
+            Hide();
+        }
+
+        private void frmCustomersView_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            //when closing, shows main form and hides add customer form
+            frmMainForm mainForm = new frmMainForm();
+            mainForm.Show();
+            Hide();
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        
     }
 }
