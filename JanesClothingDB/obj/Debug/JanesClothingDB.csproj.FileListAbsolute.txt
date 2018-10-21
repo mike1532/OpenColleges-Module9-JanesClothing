@@ -41,3 +41,4 @@ C:\Users\micha\Source\Repos\mike1532\OpenColleges-Module9-JanesClothing\JanesClo
 C:\Users\micha\Source\Repos\mike1532\OpenColleges-Module9-JanesClothing\JanesClothingDB\obj\Debug\JanesClothingDB.csproj.CoreCompileInputs.cache
 C:\Users\micha\Source\Repos\mike1532\OpenColleges-Module9-JanesClothing\JanesClothingDB\obj\Debug\JanesClothingDB.exe
 C:\Users\micha\Source\Repos\mike1532\OpenColleges-Module9-JanesClothing\JanesClothingDB\obj\Debug\JanesClothingDB.pdb
+C:\Users\micha\Source\Repos\mike1532\OpenColleges-Module9-JanesClothing\JanesClothingDB\obj\Debug\JanesClothingDB.Presentation_Layer.frmProductView.resources

@@ -34,11 +34,11 @@
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader9 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader10 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnClose = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -57,9 +57,9 @@
             this.columnHeader9});
             this.lvCustomers.FullRowSelect = true;
             this.lvCustomers.GridLines = true;
-            this.lvCustomers.Location = new System.Drawing.Point(13, 13);
+            this.lvCustomers.Location = new System.Drawing.Point(15, 15);
             this.lvCustomers.Name = "lvCustomers";
-            this.lvCustomers.Size = new System.Drawing.Size(957, 383);
+            this.lvCustomers.Size = new System.Drawing.Size(925, 430);
             this.lvCustomers.TabIndex = 0;
             this.lvCustomers.UseCompatibleStateImageBehavior = false;
             this.lvCustomers.View = System.Windows.Forms.View.Details;
@@ -68,7 +68,7 @@
             // columnHeader1
             // 
             this.columnHeader1.Text = "Customer ID";
-            this.columnHeader1.Width = 85;
+            this.columnHeader1.Width = 112;
             // 
             // columnHeader2
             // 
@@ -94,6 +94,12 @@
             this.columnHeader5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.columnHeader5.Width = 85;
             // 
+            // columnHeader10
+            // 
+            this.columnHeader10.Text = "State";
+            this.columnHeader10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.columnHeader10.Width = 85;
+            // 
             // columnHeader6
             // 
             this.columnHeader6.Text = "Postcode";
@@ -118,17 +124,11 @@
             this.columnHeader9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.columnHeader9.Width = 120;
             // 
-            // columnHeader10
-            // 
-            this.columnHeader10.Text = "State";
-            this.columnHeader10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.columnHeader10.Width = 85;
-            // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(886, 418);
+            this.btnClose.Location = new System.Drawing.Point(846, 472);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(84, 23);
+            this.btnClose.Size = new System.Drawing.Size(94, 26);
             this.btnClose.TabIndex = 1;
             this.btnClose.Text = "&Close";
             this.btnClose.UseVisualStyleBackColor = true;
@@ -136,11 +136,12 @@
             // 
             // frmCustomersView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(982, 453);
+            this.ClientSize = new System.Drawing.Size(959, 510);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.lvCustomers);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "frmCustomersView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "View Customer Details";

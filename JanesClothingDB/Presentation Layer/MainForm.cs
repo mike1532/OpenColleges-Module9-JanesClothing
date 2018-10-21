@@ -59,13 +59,23 @@ namespace JanesClothingDB
 
         private void frmMainForm_FormClosed(object sender, FormClosedEventArgs e)
         {
+            //exits application when closed
             Application.Exit();
         }
 
         private void btnCustomersView_Click(object sender, EventArgs e)
         {
+            //opens view customers/hides main
             frmCustomersView viewForm = new frmCustomersView();
             viewForm.Show();
+            Hide();
+        }
+
+        private void btnViewProducts_Click(object sender, EventArgs e)
+        {
+            //opens view products/hides main
+            frmProductView viewProd = new frmProductView();
+            viewProd.Show();
             Hide();
         }
     }

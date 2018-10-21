@@ -49,8 +49,8 @@ namespace JanesClothingDB.Business_Logic_Layer
         public Product() { }
 
         //declare parameterised constructor
-        public Product(int productID, string brand, string productDescription, string gender,
-                        string colourFast, decimal price)
+        public Product(int productID, string brand, string productDescription, decimal price,
+                        string gender, string colourFast)
         {
             ProductID = productID;
             Brand = brand;
