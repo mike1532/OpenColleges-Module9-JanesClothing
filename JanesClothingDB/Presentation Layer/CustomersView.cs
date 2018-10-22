@@ -135,7 +135,7 @@ namespace JanesClothingDB.Presentation_Layer
         {
             GlobalVariable.selectedCustomerID = 0;
             frmCustomerAdd editForm = new frmCustomerAdd();
-            editForm.Show();
+            editForm.ShowDialog();
             lvCustomers.Items.Clear();
             DisplayCustomers();
         }

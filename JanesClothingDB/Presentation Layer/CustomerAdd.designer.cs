@@ -56,6 +56,7 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
+            this.lbCategoryID = new System.Windows.Forms.ListBox();
             this.gbCustomerDetails.SuspendLayout();
             this.gbCustomerAddress.SuspendLayout();
             this.gbOfficeUseOnly.SuspendLayout();
@@ -239,6 +240,7 @@
             // 
             // txtCustomerNo
             // 
+            this.txtCustomerNo.Enabled = false;
             this.txtCustomerNo.Location = new System.Drawing.Point(130, 36);
             this.txtCustomerNo.Name = "txtCustomerNo";
             this.txtCustomerNo.Size = new System.Drawing.Size(170, 24);
@@ -257,11 +259,6 @@
             // 
             this.cbCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCategory.FormattingEnabled = true;
-            this.cbCategory.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4"});
             this.cbCategory.Location = new System.Drawing.Point(97, 166);
             this.cbCategory.Name = "cbCategory";
             this.cbCategory.Size = new System.Drawing.Size(174, 26);
@@ -269,6 +266,7 @@
             // 
             // gbCustomerDetails
             // 
+            this.gbCustomerDetails.Controls.Add(this.lbCategoryID);
             this.gbCustomerDetails.Controls.Add(this.lblFirstName);
             this.gbCustomerDetails.Controls.Add(this.cbCategory);
             this.gbCustomerDetails.Controls.Add(this.txtFirstName);
@@ -346,6 +344,16 @@
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
+            // lbCategoryID
+            // 
+            this.lbCategoryID.FormattingEnabled = true;
+            this.lbCategoryID.ItemHeight = 18;
+            this.lbCategoryID.Location = new System.Drawing.Point(286, 165);
+            this.lbCategoryID.Name = "lbCategoryID";
+            this.lbCategoryID.Size = new System.Drawing.Size(12, 22);
+            this.lbCategoryID.TabIndex = 21;
+            this.lbCategoryID.Visible = false;
+            // 
             // frmCustomerAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -363,6 +371,7 @@
             this.Text = "Add Customer Details";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmCustomerAdd_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmCustomerAdd_FormClosed);
+            this.Load += new System.EventHandler(this.frmCustomerAdd_Load);
             this.gbCustomerDetails.ResumeLayout(false);
             this.gbCustomerDetails.PerformLayout();
             this.gbCustomerAddress.ResumeLayout(false);
@@ -403,6 +412,7 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.ListBox lbCategoryID;
     }
 }
 
