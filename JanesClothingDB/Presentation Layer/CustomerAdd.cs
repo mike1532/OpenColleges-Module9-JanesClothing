@@ -7,6 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+//added to allow access
+using System.Data.SqlClient;
+using JanesClothingDB.Business_Logic_Layer;
+using JanesClothingDB.Data_Access_Layer;
 
 namespace JanesClothingDB
 {

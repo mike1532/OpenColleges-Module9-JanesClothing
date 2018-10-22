@@ -130,6 +130,14 @@ namespace JanesClothingDB.Presentation_Layer
             Close();
         }
 
-        
+        //add, update, search, delete
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            GlobalVariable.selectedCustomerID = 0;
+            frmCustomerAdd editForm = new frmCustomerAdd();
+            editForm.Show();
+            lvCustomers.Items.Clear();
+            DisplayCustomers();
+        }
     }
 }

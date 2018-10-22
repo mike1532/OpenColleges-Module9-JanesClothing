@@ -48,6 +48,7 @@
     <Compile Include="Business Logic Layer\Customer.cs" />
     <Compile Include="Business Logic Layer\Product.cs" />
     <Compile Include="Data Access Layer\ConnectionManager.cs" />
+    <Compile Include="GlobalVariable.cs" />
     <Compile Include="Presentation Layer\CustomerAdd.cs">
       <SubType>Form</SubType>
     </Compile>
