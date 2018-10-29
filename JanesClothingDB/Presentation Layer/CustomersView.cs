@@ -32,14 +32,9 @@ namespace JanesClothingDB.Presentation_Layer
             string selectQuery = " SELECT Customers.CustomerID, Categories.Category, Customers.FirstName, Customers.LastName, "
             + " Customers.Address, Customers.Suburb, Customers.State, Customers.Postcode, "
             + " Customers.Gender, Customers.SendCatalogue FROM Customers INNER JOIN "
-            + "Categories ON Customers.CustomerID = Categories.CategoryID";
+            + "Categories ON Customers.CategoryID = Categories.CategoryID";
 
-            /*selectQuery = "SELECT Customers.CustomerID, Categories.Category, Customers.FirstName, Customers.LastName, ";
-            selectQuery = selectQuery + "Customers.Address, Customers.Suburb, Customers.State, Customers.Postcode, ";
-            selectQuery = selectQuery + "Customers.Gender, Customers.SendCatalogue ";
-            selectQuery = selectQuery + "FROM Customers INNER JOIN ";
-            selectQuery = selectQuery + "Categories ON Customers.CategoryID = Categories.CategoryID";*/
-            
+                                   
             //calls DatabaseConnection method from ConnectionManager.cs file and instantiate DataReaderObject
             SqlConnection conn = ConnectionManager.DatabaseConnection();            
             SqlDataReader rdr = null;
@@ -88,6 +83,7 @@ namespace JanesClothingDB.Presentation_Layer
                     lvi.SubItems.Add(customer.SendCatalogue);
 
                     lvCustomers.Items.Add(lvi);
+                    
                 }
 
                 //if null, close DataReader object and close connection
@@ -138,6 +134,22 @@ namespace JanesClothingDB.Presentation_Layer
             editForm.ShowDialog();
             lvCustomers.Items.Clear();
             DisplayCustomers();
+           
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            if (lvCustomers.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Please select a Customer to update.");
+                return;
+            }
+            GlobalVariable.selectedCustomerID = int.Parse(lvCustomers.SelectedItems[0].Text);
+            frmCustomerAdd editForm = new frmCustomerAdd();
+            editForm.ShowDialog();
+            lvCustomers.Items.Clear();
+            DisplayCustomers();
         }
     }
 }
+

@@ -49,14 +49,14 @@
             this.lblCustomerID = new System.Windows.Forms.Label();
             this.txtCustomerNo = new System.Windows.Forms.TextBox();
             this.lblCategory = new System.Windows.Forms.Label();
-            this.cbCategory = new System.Windows.Forms.ComboBox();
+            this.cbCategoryID = new System.Windows.Forms.ComboBox();
             this.gbCustomerDetails = new System.Windows.Forms.GroupBox();
+            this.lbCategoryID = new System.Windows.Forms.ListBox();
             this.gbCustomerAddress = new System.Windows.Forms.GroupBox();
             this.gbOfficeUseOnly = new System.Windows.Forms.GroupBox();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
-            this.lbCategoryID = new System.Windows.Forms.ListBox();
             this.gbCustomerDetails.SuspendLayout();
             this.gbCustomerAddress.SuspendLayout();
             this.gbOfficeUseOnly.SuspendLayout();
@@ -255,20 +255,20 @@
             this.lblCategory.TabIndex = 20;
             this.lblCategory.Text = "Category:";
             // 
-            // cbCategory
+            // cbCategoryID
             // 
-            this.cbCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbCategory.FormattingEnabled = true;
-            this.cbCategory.Location = new System.Drawing.Point(97, 166);
-            this.cbCategory.Name = "cbCategory";
-            this.cbCategory.Size = new System.Drawing.Size(174, 26);
-            this.cbCategory.TabIndex = 5;
+            this.cbCategoryID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbCategoryID.FormattingEnabled = true;
+            this.cbCategoryID.Location = new System.Drawing.Point(97, 166);
+            this.cbCategoryID.Name = "cbCategoryID";
+            this.cbCategoryID.Size = new System.Drawing.Size(174, 26);
+            this.cbCategoryID.TabIndex = 5;
             // 
             // gbCustomerDetails
             // 
             this.gbCustomerDetails.Controls.Add(this.lbCategoryID);
             this.gbCustomerDetails.Controls.Add(this.lblFirstName);
-            this.gbCustomerDetails.Controls.Add(this.cbCategory);
+            this.gbCustomerDetails.Controls.Add(this.cbCategoryID);
             this.gbCustomerDetails.Controls.Add(this.txtFirstName);
             this.gbCustomerDetails.Controls.Add(this.lblCategory);
             this.gbCustomerDetails.Controls.Add(this.lblLastName);
@@ -282,6 +282,16 @@
             this.gbCustomerDetails.TabIndex = 0;
             this.gbCustomerDetails.TabStop = false;
             this.gbCustomerDetails.Text = "Customer Details";
+            // 
+            // lbCategoryID
+            // 
+            this.lbCategoryID.FormattingEnabled = true;
+            this.lbCategoryID.ItemHeight = 18;
+            this.lbCategoryID.Location = new System.Drawing.Point(286, 165);
+            this.lbCategoryID.Name = "lbCategoryID";
+            this.lbCategoryID.Size = new System.Drawing.Size(12, 22);
+            this.lbCategoryID.TabIndex = 21;
+            this.lbCategoryID.Visible = false;
             // 
             // gbCustomerAddress
             // 
@@ -344,16 +354,6 @@
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
-            // lbCategoryID
-            // 
-            this.lbCategoryID.FormattingEnabled = true;
-            this.lbCategoryID.ItemHeight = 18;
-            this.lbCategoryID.Location = new System.Drawing.Point(286, 165);
-            this.lbCategoryID.Name = "lbCategoryID";
-            this.lbCategoryID.Size = new System.Drawing.Size(12, 22);
-            this.lbCategoryID.TabIndex = 21;
-            this.lbCategoryID.Visible = false;
-            // 
             // frmCustomerAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -405,7 +405,7 @@
         private System.Windows.Forms.Label lblCustomerID;
         private System.Windows.Forms.TextBox txtCustomerNo;
         private System.Windows.Forms.Label lblCategory;
-        private System.Windows.Forms.ComboBox cbCategory;
+        private System.Windows.Forms.ComboBox cbCategoryID;
         private System.Windows.Forms.GroupBox gbCustomerDetails;
         private System.Windows.Forms.GroupBox gbCustomerAddress;
         private System.Windows.Forms.GroupBox gbOfficeUseOnly;

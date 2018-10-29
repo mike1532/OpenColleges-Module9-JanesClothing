@@ -21,14 +21,56 @@ namespace JanesClothingDB
             InitializeComponent();
         }
 
+        //Events
         private void frmCustomerAdd_FormClosing(object sender, FormClosingEventArgs e)
         {
             //when closing, shows main form and hides add customer form
-           // frmMainForm mainForm = new frmMainForm();
+            //frmMainForm mainForm = new frmMainForm();
             //mainForm.Show();
             //Hide();
         }
+        private void frmCustomerAdd_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            //when closing, shows main form and hides add customer form
+            frmMainForm mainForm = new frmMainForm();
+            mainForm.Show();
+            Hide();
+        }
+        private void frmCustomerAdd_Load(object sender, EventArgs e)
+        {
+            //database query
+            string selectQuery;
+            selectQuery = "SELECT * FROM Categories";
 
+            SqlConnection connection = ConnectionManager.DatabaseConnection();
+            SqlDataReader reader = null;
+
+            try
+            {
+                connection.Open();
+                SqlCommand command = new SqlCommand(selectQuery, connection);
+                reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    lbCategoryID.Items.Add(reader["CategoryID"].ToString());
+                    cbCategoryID.Items.Add(reader["Category"].ToString());
+                }
+                if (reader != null)
+                    reader.Close();
+                connection.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Unsuccessful" + ex);
+            }
+
+            //code to update row
+            if (GlobalVariable.selectedCustomerID == 0)
+                btnAdd.Text = "&Add";
+        }
+
+        //buttons
         private void btnAdd_Click(object sender, EventArgs e)
         {
             //edit checked to validate user input
@@ -47,7 +89,7 @@ namespace JanesClothingDB
                 MessageBox.Show("Please select a Gender.");
                 return;
             }
-            if (String.IsNullOrEmpty(cbCategory.Text))
+            if (String.IsNullOrEmpty(cbCategoryID.Text))
             {
                 MessageBox.Show("Please select a Category.");
                 return;
@@ -93,22 +135,71 @@ namespace JanesClothingDB
                 sendCatalogue = 0;
             }
 
+            //create customer object to add to database
+            Customer customer = new Customer(GlobalVariable.selectedCustomerID, txtFirstName.Text, txtLastName.Text,
+                                             lbCategoryID.Items[cbCategoryID.SelectedIndex].ToString(), gender, 
+                                             txtAddress.Text, txtSuburb.Text, cbState.Text, int.Parse(txtPostcode.Text),
+                                             sendCatalogue.ToString());
+
+            string addQuery;
+
+            if (GlobalVariable.selectedCustomerID == 0)
+            {
+                addQuery = "sp_Customers_CreateCustomer ";
+            }
+            else
+            {
+                addQuery = "";
+            }
+
+            SqlConnection connection = ConnectionManager.DatabaseConnection();
+            connection.Open();
+            SqlCommand command = new SqlCommand(addQuery, connection);
+
+            //command.Transaction = connection.BeginTransaction();
+            //command.ExecuteNonQuery();
+            //command.Transaction.Commit();
+
+           // passing parameters to a stored procedure and executing the stored procedure
+            command.CommandType = CommandType.StoredProcedure;
+            
+            command.Parameters.AddWithValue("@CategoryID", customer.Category);
+            command.Parameters.AddWithValue("@FirstName", customer.FirstName);
+            command.Parameters.AddWithValue("@LastName", customer.LastName);
+            command.Parameters.AddWithValue("@Address", customer.Address);
+            command.Parameters.AddWithValue("@Suburb", customer.Suburb);
+            command.Parameters.AddWithValue("@State", customer.State);
+            command.Parameters.AddWithValue("@Postcode", customer.PostCode);
+            command.Parameters.AddWithValue("@Gender", customer.Gender);
+            command.Parameters.AddWithValue("@SendCatalogue", customer.SendCatalogue);
+
+            if (GlobalVariable.selectedCustomerID == 0)
+            {
+                command.Parameters.AddWithValue("@NewCustomerID", SqlDbType.Int).Direction = ParameterDirection.Output;
+            }
+
+            command.Transaction = connection.BeginTransaction();
+            command.ExecuteNonQuery();
+            command.Transaction.Commit();
+
+            //close connection
+            connection.Close();
+            Close();
+            
 
         }
-
         private void btnCancel_Click(object sender, EventArgs e)
         {
             //closes form
             Close();
         }
-
         private void btnClear_Click(object sender, EventArgs e)
         {
             txtFirstName.Clear();
             txtLastName.Clear();
             rbMale.Checked = false;
             rbFemale.Checked = false;
-            cbCategory.SelectedIndex = -1;
+            cbCategoryID.SelectedIndex = -1;
             txtAddress.Clear();
             txtSuburb.Clear();
             cbState.SelectedIndex = -1;
@@ -118,42 +209,6 @@ namespace JanesClothingDB
             chkNo.Checked = false;
         }
 
-        private void frmCustomerAdd_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            //when closing, shows main form and hides add customer form
-            frmMainForm mainForm = new frmMainForm();
-            mainForm.Show();
-            Hide();
-        }
-
-        private void frmCustomerAdd_Load(object sender, EventArgs e)
-        {
-            //database query
-            string selectQuery = "SELECT * FROM Categories";
-                        
-            SqlConnection connection = ConnectionManager.DatabaseConnection();
-            SqlDataReader reader = null;
-
-            try
-            {
-                connection.Open();
-                SqlCommand command = new SqlCommand(selectQuery, connection);
-                reader = command.ExecuteReader();
-
-                while (reader.Read())
-                {
-                    lbCategoryID.Items.Add(reader["CategoryID"].ToString());
-                    cbCategory.Items.Add(reader["Category"].ToString());
-                }
-                if (reader != null)
-                    reader.Close();
-                connection.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Unsuccessful" + ex);
-                Application.Exit();
-            }       
-        }
+       
     }
 }

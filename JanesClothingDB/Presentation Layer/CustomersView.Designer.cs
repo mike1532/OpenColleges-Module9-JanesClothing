@@ -156,6 +156,7 @@
             this.btnUpdate.TabIndex = 3;
             this.btnUpdate.Text = "&Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btbDelete
             // 
