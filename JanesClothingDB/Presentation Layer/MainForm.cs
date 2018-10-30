@@ -19,28 +19,13 @@ namespace JanesClothingDB
             InitializeComponent();
         }
 
-        private void btnAddCustomer_Click(object sender, EventArgs e)
-        {
-            //opens add customer form/hides main form
-            frmCustomerAdd addForm = new frmCustomerAdd();
-            addForm.Show();
-            Hide();
-        }
-
-        private void btnEditCustomer_Click(object sender, EventArgs e)
-        {
-            //opens edit customer from/hides main form
-            frmCustomersEdit editForm = new frmCustomersEdit();
-            editForm.Show();
-            Hide();
-        }
-
         private void btnExit_Click(object sender, EventArgs e)
         {
             //exit application
             Application.Exit();
         }
 
+        //**DELETE**
         private void btnAddProduct_Click(object sender, EventArgs e)
         {
             //opens add product details/hides main
@@ -49,6 +34,7 @@ namespace JanesClothingDB
             Hide();
         }
 
+        //**DELETE**
         private void btnEditProduct_Click(object sender, EventArgs e)
         {
             //opens edit product details/hides main

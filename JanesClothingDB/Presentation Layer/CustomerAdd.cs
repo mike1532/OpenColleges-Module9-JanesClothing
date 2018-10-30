@@ -38,15 +38,19 @@ namespace JanesClothingDB
         }
         private void frmCustomerAdd_Load(object sender, EventArgs e)
         {
+            
             //database query
             string selectQuery;
             selectQuery = "SELECT * FROM Categories";
 
+            //instantiate Datareader object and connect to database
             SqlConnection connection = ConnectionManager.DatabaseConnection();
             SqlDataReader reader = null;
 
             try
             {
+                
+                //code to populate catergory box
                 connection.Open();
                 SqlCommand command = new SqlCommand(selectQuery, connection);
                 reader = command.ExecuteReader();
@@ -68,11 +72,57 @@ namespace JanesClothingDB
             //code to update row
             if (GlobalVariable.selectedCustomerID == 0)
                 btnAdd.Text = "&Add";
+            else
+                btnAdd.Text = "U&pdate";
+
+            if (GlobalVariable.selectedCustomerID > 0)
+            {
+                selectQuery = "SELECT * FROM Customers WHERE CustomerID = " + GlobalVariable.selectedCustomerID.ToString();
+
+                SqlConnection conn1 = ConnectionManager.DatabaseConnection();
+                SqlDataReader reader1 = null;
+
+                try
+                {
+                    //open connection and instantiate DataReader object
+                    conn1.Open();
+                    SqlCommand comm1 = new SqlCommand(selectQuery, conn1);
+                    reader1 = comm1.ExecuteReader();
+                    reader1.Read();
+
+                    //loads info from database into form
+                    txtCustomerID.Text = reader1["CustomerID"].ToString();
+                    txtFirstName.Text = reader1["FirstName"].ToString();
+                    txtLastName.Text = reader1["LastName"].ToString();
+                    if (reader1["Gender"].ToString() == "M")
+                        rbMale.Checked = true;
+                    else
+                        rbFemale.Checked = true;
+                    cbCategoryID.SelectedIndex = int.Parse(reader1["CategoryID"].ToString()) - 1;
+                    txtAddress.Text = reader1["Address"].ToString();
+                    txtSuburb.Text = reader1["Suburb"].ToString();
+                    cbState.Text = reader1["State"].ToString();
+                    txtPostcode.Text = reader1["Postcode"].ToString();
+                    if (bool.Parse(reader1["SendCatalogue"].ToString()) == true)
+                        chkYes.Checked = true;
+                    else
+                        chkNo.Checked = true;
+
+                    //close reader object and connection
+                    reader1.Close();
+                    conn1.Close();                  
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Unsuccessful" + ex);
+                }
+            }
         }
 
         //buttons
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            
             //edit checked to validate user input
             if (String.IsNullOrEmpty(txtFirstName.Text))
             {
@@ -149,7 +199,7 @@ namespace JanesClothingDB
             }
             else
             {
-                addQuery = "";
+                addQuery = "sp_Customers_UpdateCustomer ";
             }
 
             SqlConnection connection = ConnectionManager.DatabaseConnection();
@@ -162,7 +212,8 @@ namespace JanesClothingDB
 
            // passing parameters to a stored procedure and executing the stored procedure
             command.CommandType = CommandType.StoredProcedure;
-            
+            if (GlobalVariable.selectedCustomerID != 0)
+                command.Parameters.AddWithValue("@CustomerID", customer.CustomerID);            
             command.Parameters.AddWithValue("@CategoryID", customer.Category);
             command.Parameters.AddWithValue("@FirstName", customer.FirstName);
             command.Parameters.AddWithValue("@LastName", customer.LastName);
@@ -195,6 +246,11 @@ namespace JanesClothingDB
         }
         private void btnClear_Click(object sender, EventArgs e)
         {
+            ClearInfo();
+        }
+
+        public void ClearInfo()
+        {
             txtFirstName.Clear();
             txtLastName.Clear();
             rbMale.Checked = false;
@@ -204,11 +260,10 @@ namespace JanesClothingDB
             txtSuburb.Clear();
             cbState.SelectedIndex = -1;
             txtPostcode.Clear();
-            txtCustomerNo.Clear();
+            txtCustomerID.Clear();
             chkYes.Checked = false;
             chkNo.Checked = false;
         }
-
        
     }
 }

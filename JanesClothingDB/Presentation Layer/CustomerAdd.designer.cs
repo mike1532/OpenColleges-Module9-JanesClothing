@@ -47,7 +47,7 @@
             this.lblLastName = new System.Windows.Forms.Label();
             this.txtLastName = new System.Windows.Forms.TextBox();
             this.lblCustomerID = new System.Windows.Forms.Label();
-            this.txtCustomerNo = new System.Windows.Forms.TextBox();
+            this.txtCustomerID = new System.Windows.Forms.TextBox();
             this.lblCategory = new System.Windows.Forms.Label();
             this.cbCategoryID = new System.Windows.Forms.ComboBox();
             this.gbCustomerDetails = new System.Windows.Forms.GroupBox();
@@ -238,13 +238,13 @@
             this.lblCustomerID.TabIndex = 18;
             this.lblCustomerID.Text = "Customer ID:";
             // 
-            // txtCustomerNo
+            // txtCustomerID
             // 
-            this.txtCustomerNo.Enabled = false;
-            this.txtCustomerNo.Location = new System.Drawing.Point(130, 36);
-            this.txtCustomerNo.Name = "txtCustomerNo";
-            this.txtCustomerNo.Size = new System.Drawing.Size(170, 24);
-            this.txtCustomerNo.TabIndex = 0;
+            this.txtCustomerID.Enabled = false;
+            this.txtCustomerID.Location = new System.Drawing.Point(130, 36);
+            this.txtCustomerID.Name = "txtCustomerID";
+            this.txtCustomerID.Size = new System.Drawing.Size(170, 24);
+            this.txtCustomerID.TabIndex = 0;
             // 
             // lblCategory
             // 
@@ -313,7 +313,7 @@
             // gbOfficeUseOnly
             // 
             this.gbOfficeUseOnly.Controls.Add(this.lblCustomerID);
-            this.gbOfficeUseOnly.Controls.Add(this.txtCustomerNo);
+            this.gbOfficeUseOnly.Controls.Add(this.txtCustomerID);
             this.gbOfficeUseOnly.Controls.Add(this.lblSendCatalogue);
             this.gbOfficeUseOnly.Controls.Add(this.chkNo);
             this.gbOfficeUseOnly.Controls.Add(this.chkYes);
@@ -403,7 +403,7 @@
         private System.Windows.Forms.Label lblLastName;
         private System.Windows.Forms.TextBox txtLastName;
         private System.Windows.Forms.Label lblCustomerID;
-        private System.Windows.Forms.TextBox txtCustomerNo;
+        private System.Windows.Forms.TextBox txtCustomerID;
         private System.Windows.Forms.Label lblCategory;
         private System.Windows.Forms.ComboBox cbCategoryID;
         private System.Windows.Forms.GroupBox gbCustomerDetails;
