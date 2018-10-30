@@ -26,6 +26,54 @@ namespace JanesClothingDB.Presentation_Layer
 
         }
 
+       
+        //loading/closing events
+        private void frmCustomersView_Load(object sender, EventArgs e)
+        {
+            DisplayCustomers();
+        }
+        private void frmCustomersView_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            frmMainForm mainForm = new frmMainForm();
+            mainForm.Show();
+            Hide();
+        }
+        private void frmCustomersView_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            //when closing, shows main form and hides add customer form
+            frmMainForm mainForm = new frmMainForm();
+            mainForm.Show();
+            Hide();
+        }
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        //add, update, search, delete
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            GlobalVariable.selectedCustomerID = 0;
+            frmCustomerAdd editForm = new frmCustomerAdd();
+            editForm.ShowDialog();
+            lvCustomers.Items.Clear();
+            DisplayCustomers();
+           
+        }
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            if (lvCustomers.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Please select a Customer to update.");
+                return;
+            }
+            GlobalVariable.selectedCustomerID = int.Parse(lvCustomers.SelectedItems[0].Text);
+            frmCustomerAdd editForm = new frmCustomerAdd();
+            editForm.ShowDialog();
+            lvCustomers.Items.Clear();
+            DisplayCustomers();
+        }
+
         //when called, will populate the ListView control with rows from the Customers table
         public void DisplayCustomers()
         {
@@ -34,9 +82,9 @@ namespace JanesClothingDB.Presentation_Layer
             + " Customers.Gender, Customers.SendCatalogue FROM Customers INNER JOIN "
             + "Categories ON Customers.CategoryID = Categories.CategoryID";
 
-                                   
+
             //calls DatabaseConnection method from ConnectionManager.cs file and instantiate DataReaderObject
-            SqlConnection conn = ConnectionManager.DatabaseConnection();            
+            SqlConnection conn = ConnectionManager.DatabaseConnection();
             SqlDataReader rdr = null;
 
             try
@@ -76,14 +124,14 @@ namespace JanesClothingDB.Presentation_Layer
                     lvi.SubItems.Add(customer.LastName);
                     lvi.SubItems.Add(customer.Address);
                     lvi.SubItems.Add(customer.Suburb);
-                    lvi.SubItems.Add(customer.State);                                     
+                    lvi.SubItems.Add(customer.State);
                     lvi.SubItems.Add(customer.PostCode.ToString());
                     lvi.SubItems.Add(customer.Gender);
                     lvi.SubItems.Add(customer.Category);
                     lvi.SubItems.Add(customer.SendCatalogue);
 
                     lvCustomers.Items.Add(lvi);
-                    
+
                 }
 
                 //if null, close DataReader object and close connection
@@ -99,56 +147,6 @@ namespace JanesClothingDB.Presentation_Layer
                 //added an application exit cause if the program threw an exception it went into an infinite loop :/
                 Application.Exit();
             }
-        }
-
-        private void frmCustomersView_Load(object sender, EventArgs e)
-        {
-            DisplayCustomers();
-        }
-
-        private void frmCustomersView_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            frmMainForm mainForm = new frmMainForm();
-            mainForm.Show();
-            Hide();
-        }
-
-        private void frmCustomersView_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            //when closing, shows main form and hides add customer form
-            frmMainForm mainForm = new frmMainForm();
-            mainForm.Show();
-            Hide();
-        }
-
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
-        //add, update, search, delete
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-            GlobalVariable.selectedCustomerID = 0;
-            frmCustomerAdd editForm = new frmCustomerAdd();
-            editForm.ShowDialog();
-            lvCustomers.Items.Clear();
-            DisplayCustomers();
-           
-        }
-
-        private void btnUpdate_Click(object sender, EventArgs e)
-        {
-            if (lvCustomers.SelectedItems.Count == 0)
-            {
-                MessageBox.Show("Please select a Customer to update.");
-                return;
-            }
-            GlobalVariable.selectedCustomerID = int.Parse(lvCustomers.SelectedItems[0].Text);
-            frmCustomerAdd editForm = new frmCustomerAdd();
-            editForm.ShowDialog();
-            lvCustomers.Items.Clear();
-            DisplayCustomers();
         }
     }
 }

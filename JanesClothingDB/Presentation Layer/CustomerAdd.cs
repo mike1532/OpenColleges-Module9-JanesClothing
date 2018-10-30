@@ -38,19 +38,17 @@ namespace JanesClothingDB
         }
         private void frmCustomerAdd_Load(object sender, EventArgs e)
         {
-            
-            //database query
-            string selectQuery;
-            selectQuery = "SELECT * FROM Categories";
 
-            //instantiate Datareader object and connect to database
+            //database query and instantiate Datareader object and connect to database
+            string selectQuery;
+
+            selectQuery = "SELECT * FROM Categories";               
             SqlConnection connection = ConnectionManager.DatabaseConnection();
             SqlDataReader reader = null;
 
+            //code to populate category box
             try
-            {
-                
-                //code to populate catergory box
+            {            
                 connection.Open();
                 SqlCommand command = new SqlCommand(selectQuery, connection);
                 reader = command.ExecuteReader();

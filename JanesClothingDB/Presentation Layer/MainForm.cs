@@ -29,7 +29,7 @@ namespace JanesClothingDB
         private void btnAddProduct_Click(object sender, EventArgs e)
         {
             //opens add product details/hides main
-            frmProductDetails addProd = new frmProductDetails();
+            frmProductAdd addProd = new frmProductAdd();
             addProd.Show();
             Hide();
         }

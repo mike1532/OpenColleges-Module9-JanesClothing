@@ -9,5 +9,6 @@ namespace JanesClothingDB
     class GlobalVariable
     {
         public static int selectedCustomerID;
+        public static int selectedProductID;
     }
 }

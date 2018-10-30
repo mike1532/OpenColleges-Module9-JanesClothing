@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.btnExit = new System.Windows.Forms.Button();
-            this.btnAddProduct = new System.Windows.Forms.Button();
             this.btnEditProduct = new System.Windows.Forms.Button();
             this.btnCustomersView = new System.Windows.Forms.Button();
             this.btnViewProducts = new System.Windows.Forms.Button();
@@ -44,16 +43,6 @@
             this.btnExit.Text = "E&xit";
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
-            // 
-            // btnAddProduct
-            // 
-            this.btnAddProduct.Location = new System.Drawing.Point(187, 296);
-            this.btnAddProduct.Name = "btnAddProduct";
-            this.btnAddProduct.Size = new System.Drawing.Size(169, 33);
-            this.btnAddProduct.TabIndex = 2;
-            this.btnAddProduct.Text = "Add &Product";
-            this.btnAddProduct.UseVisualStyleBackColor = true;
-            this.btnAddProduct.Click += new System.EventHandler(this.btnAddProduct_Click);
             // 
             // btnEditProduct
             // 
@@ -93,7 +82,6 @@
             this.Controls.Add(this.btnViewProducts);
             this.Controls.Add(this.btnCustomersView);
             this.Controls.Add(this.btnEditProduct);
-            this.Controls.Add(this.btnAddProduct);
             this.Controls.Add(this.btnExit);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "frmMainForm";
@@ -106,7 +94,6 @@
 
         #endregion
         private System.Windows.Forms.Button btnExit;
-        private System.Windows.Forms.Button btnAddProduct;
         private System.Windows.Forms.Button btnEditProduct;
         private System.Windows.Forms.Button btnCustomersView;
         private System.Windows.Forms.Button btnViewProducts;

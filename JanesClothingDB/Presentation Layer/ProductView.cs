@@ -21,31 +21,53 @@ namespace JanesClothingDB.Presentation_Layer
             InitializeComponent();
         }
 
-        //closing actions
+        //loading/closing actions
         private void ProductView_FormClosing(object sender, FormClosingEventArgs e)
         {
             frmMainForm mainForm = new frmMainForm();
             mainForm.Show();
             Hide();
         }
-
         private void ProductView_FormClosed(object sender, FormClosedEventArgs e)
         { 
             frmMainForm mainForm = new frmMainForm();
             mainForm.Show();
             Hide();
         }
-
         private void btnClose_Click(object sender, EventArgs e)
         {
             Close();
         }
-
         private void frmProductView_Load(object sender, EventArgs e)
         {
             DisplayProducts();
+        }          
+
+        //buttons
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            GlobalVariable.selectedProductID = 0;
+            frmProductAdd editForm = new frmProductAdd();
+            editForm.ShowDialog();
+            lvProducts.Items.Clear();
+            DisplayProducts();
+        }
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            //checks that product has been chosen
+            if (lvProducts.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Please choose a product to update");
+                return;
+            }
+            GlobalVariable.selectedProductID = int.Parse(lvProducts.SelectedItems[0].Text);
+            frmProductAdd editForm = new frmProductAdd();
+            editForm.ShowDialog();
+            lvProducts.Items.Clear();
+            DisplayProducts();           
         }
 
+        //displays products
         public void DisplayProducts()
         {
             //query to show product details
@@ -97,7 +119,7 @@ namespace JanesClothingDB.Presentation_Layer
                     listViewItem.SubItems.Add(product.Price.ToString("0.00"));
                     listViewItem.SubItems.Add(product.Gender);
                     listViewItem.SubItems.Add(product.ColourFast);
-                   
+
 
                     lvProducts.Items.Add(listViewItem);
                 }

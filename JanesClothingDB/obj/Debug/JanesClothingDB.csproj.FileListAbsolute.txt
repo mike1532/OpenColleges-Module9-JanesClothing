@@ -34,7 +34,6 @@ C:\Users\micha\Source\Repos\mike1532\OpenColleges-Module9-JanesClothing\JanesClo
 C:\Users\micha\Source\Repos\mike1532\OpenColleges-Module9-JanesClothing\JanesClothingDB\obj\Debug\JanesClothingDB.frmCustomersEdit.resources
 C:\Users\micha\Source\Repos\mike1532\OpenColleges-Module9-JanesClothing\JanesClothingDB\obj\Debug\JanesClothingDB.Presentation_Layer.frmCustomersView.resources
 C:\Users\micha\Source\Repos\mike1532\OpenColleges-Module9-JanesClothing\JanesClothingDB\obj\Debug\JanesClothingDB.frmMainForm.resources
-C:\Users\micha\Source\Repos\mike1532\OpenColleges-Module9-JanesClothing\JanesClothingDB\obj\Debug\JanesClothingDB.frmProductDetails.resources
 C:\Users\micha\Source\Repos\mike1532\OpenColleges-Module9-JanesClothing\JanesClothingDB\obj\Debug\JanesClothingDB.frmProductEdit.resources
 C:\Users\micha\Source\Repos\mike1532\OpenColleges-Module9-JanesClothing\JanesClothingDB\obj\Debug\JanesClothingDB.Properties.Resources.resources
 C:\Users\micha\Source\Repos\mike1532\OpenColleges-Module9-JanesClothing\JanesClothingDB\obj\Debug\JanesClothingDB.csproj.GenerateResource.cache
@@ -42,3 +41,4 @@ C:\Users\micha\Source\Repos\mike1532\OpenColleges-Module9-JanesClothing\JanesClo
 C:\Users\micha\Source\Repos\mike1532\OpenColleges-Module9-JanesClothing\JanesClothingDB\obj\Debug\JanesClothingDB.exe
 C:\Users\micha\Source\Repos\mike1532\OpenColleges-Module9-JanesClothing\JanesClothingDB\obj\Debug\JanesClothingDB.pdb
 C:\Users\micha\Source\Repos\mike1532\OpenColleges-Module9-JanesClothing\JanesClothingDB\obj\Debug\JanesClothingDB.Presentation_Layer.frmProductView.resources
+C:\Users\micha\Source\Repos\mike1532\OpenColleges-Module9-JanesClothing\JanesClothingDB\obj\Debug\JanesClothingDB.frmProductAdd.resources
