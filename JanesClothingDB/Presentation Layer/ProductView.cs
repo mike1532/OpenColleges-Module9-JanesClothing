@@ -57,14 +57,14 @@ namespace JanesClothingDB.Presentation_Layer
             //checks that product has been chosen
             if (lvProducts.SelectedItems.Count == 0)
             {
-                MessageBox.Show("Please choose a product to update");
+                MessageBox.Show("Please select a Product to update");
                 return;
             }
             GlobalVariable.selectedProductID = int.Parse(lvProducts.SelectedItems[0].Text);
             frmProductAdd editForm = new frmProductAdd();
             editForm.ShowDialog();
             lvProducts.Items.Clear();
-            DisplayProducts();           
+            DisplayProducts();
         }
 
         //displays products
@@ -91,14 +91,15 @@ namespace JanesClothingDB.Presentation_Layer
                 {
                     //defaults to male, sets to female or unisex
                     string genderType = "Male";
-                    if (reader["genderType"].ToString() == "F")
+                    if (reader["GenderType"].ToString() == "F")
                     {
                         genderType = "Female";
                     }
-                    if (reader["genderType"].ToString() == "U")
+                    else if (reader["GenderType"].ToString() == "U")
                     {
                         genderType = "Unisex";
                     }
+
                     //defaults to no, sets entry as boolean, if true returns yes
                     string colourFast = "No";
                     bool cf = reader.GetBoolean(reader.GetOrdinal("ColourFast"));

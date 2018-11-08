@@ -61,6 +61,7 @@
             this.columnHeader4,
             this.columnHeader5,
             this.columnHeader6});
+            this.lvProducts.FullRowSelect = true;
             this.lvProducts.Location = new System.Drawing.Point(15, 12);
             this.lvProducts.Name = "lvProducts";
             this.lvProducts.Size = new System.Drawing.Size(689, 410);

@@ -172,6 +172,7 @@ namespace JanesClothingDB
                 MessageBox.Show("Please select if the Customer wishes to receive our Catalogue");
                 return;
             }
+
             string gender = "M";
             if (rbFemale.Checked)
             {

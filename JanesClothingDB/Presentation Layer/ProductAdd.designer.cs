@@ -34,6 +34,7 @@
             this.cbBrandID = new System.Windows.Forms.ComboBox();
             this.lblProductDescription = new System.Windows.Forms.Label();
             this.gbProductDescription = new System.Windows.Forms.GroupBox();
+            this.lbBrandID = new System.Windows.Forms.ListBox();
             this.lblColourFast = new System.Windows.Forms.Label();
             this.cbColourFast = new System.Windows.Forms.CheckBox();
             this.rbUnisex = new System.Windows.Forms.RadioButton();
@@ -46,7 +47,6 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
-            this.lbBrandID = new System.Windows.Forms.ListBox();
             this.gbProductDescription.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,6 +61,7 @@
             // 
             // txtProductID
             // 
+            this.txtProductID.Enabled = false;
             this.txtProductID.Location = new System.Drawing.Point(221, 63);
             this.txtProductID.Name = "txtProductID";
             this.txtProductID.Size = new System.Drawing.Size(199, 24);
@@ -71,9 +72,9 @@
             this.lblBrandID.AutoSize = true;
             this.lblBrandID.Location = new System.Drawing.Point(44, 109);
             this.lblBrandID.Name = "lblBrandID";
-            this.lblBrandID.Size = new System.Drawing.Size(69, 18);
+            this.lblBrandID.Size = new System.Drawing.Size(51, 18);
             this.lblBrandID.TabIndex = 2;
-            this.lblBrandID.Text = "Brand ID:";
+            this.lblBrandID.Text = "Brand:";
             // 
             // cbBrandID
             // 
@@ -116,6 +117,16 @@
             this.gbProductDescription.TabIndex = 0;
             this.gbProductDescription.TabStop = false;
             this.gbProductDescription.Text = "Product Description";
+            // 
+            // lbBrandID
+            // 
+            this.lbBrandID.FormattingEnabled = true;
+            this.lbBrandID.ItemHeight = 18;
+            this.lbBrandID.Location = new System.Drawing.Point(435, 110);
+            this.lbBrandID.Name = "lbBrandID";
+            this.lbBrandID.Size = new System.Drawing.Size(15, 22);
+            this.lbBrandID.TabIndex = 14;
+            this.lbBrandID.Visible = false;
             // 
             // lblColourFast
             // 
@@ -202,9 +213,9 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(577, 76);
+            this.btnAdd.Location = new System.Drawing.Point(29, 445);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(178, 72);
+            this.btnAdd.Size = new System.Drawing.Size(113, 32);
             this.btnAdd.TabIndex = 1;
             this.btnAdd.Text = "&Add";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -212,9 +223,9 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(577, 358);
+            this.btnCancel.Location = new System.Drawing.Point(429, 445);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(178, 72);
+            this.btnCancel.Size = new System.Drawing.Size(113, 32);
             this.btnCancel.TabIndex = 2;
             this.btnCancel.Text = "&Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
@@ -222,29 +233,19 @@
             // 
             // btnClear
             // 
-            this.btnClear.Location = new System.Drawing.Point(577, 205);
+            this.btnClear.Location = new System.Drawing.Point(229, 445);
             this.btnClear.Name = "btnClear";
-            this.btnClear.Size = new System.Drawing.Size(178, 72);
+            this.btnClear.Size = new System.Drawing.Size(113, 32);
             this.btnClear.TabIndex = 3;
             this.btnClear.Text = "C&lear";
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
-            // lbBrandID
-            // 
-            this.lbBrandID.FormattingEnabled = true;
-            this.lbBrandID.ItemHeight = 18;
-            this.lbBrandID.Location = new System.Drawing.Point(435, 110);
-            this.lbBrandID.Name = "lbBrandID";
-            this.lbBrandID.Size = new System.Drawing.Size(15, 22);
-            this.lbBrandID.TabIndex = 14;
-            this.lbBrandID.Visible = false;
-            // 
             // frmProductAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(808, 489);
+            this.ClientSize = new System.Drawing.Size(579, 489);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnAdd);
