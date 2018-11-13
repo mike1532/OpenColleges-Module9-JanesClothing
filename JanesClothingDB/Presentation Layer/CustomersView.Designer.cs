@@ -42,7 +42,7 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
-            this.btbDelete = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.btnSearch = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -158,14 +158,15 @@
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
-            // btbDelete
+            // btnDelete
             // 
-            this.btbDelete.Location = new System.Drawing.Point(429, 472);
-            this.btbDelete.Name = "btbDelete";
-            this.btbDelete.Size = new System.Drawing.Size(94, 26);
-            this.btbDelete.TabIndex = 4;
-            this.btbDelete.Text = "&Delete";
-            this.btbDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Location = new System.Drawing.Point(429, 472);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(94, 26);
+            this.btnDelete.TabIndex = 4;
+            this.btnDelete.Text = "&Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnSearch
             // 
@@ -182,7 +183,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(959, 510);
             this.Controls.Add(this.btnSearch);
-            this.Controls.Add(this.btbDelete);
+            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnClose);
@@ -214,7 +215,7 @@
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnUpdate;
-        private System.Windows.Forms.Button btbDelete;
+        private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnSearch;
     }
 }

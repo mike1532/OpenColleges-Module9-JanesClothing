@@ -43,7 +43,7 @@ namespace JanesClothingDB.Presentation_Layer
             DisplayProducts();
         }          
 
-        //buttons
+        //add, update, delete, search
         private void btnAdd_Click(object sender, EventArgs e)
         {
             GlobalVariable.selectedProductID = 0;
@@ -65,6 +65,38 @@ namespace JanesClothingDB.Presentation_Layer
             editForm.ShowDialog();
             lvProducts.Items.Clear();
             DisplayProducts();
+        }
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (lvProducts.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Please select a Product to delete.");
+                return;
+            }
+
+            DialogResult dialogResult = MessageBox.Show("Are you sure you wish to delete this record?",
+                                            "Product Delete", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.No)
+                return;
+
+            int selectedProductID = int.Parse(lvProducts.SelectedItems[0].Text);
+            string deleteProduct = "sp_Products_DeleteProduct";
+
+            SqlConnection connection = ConnectionManager.DatabaseConnection();
+            connection.Open();
+            SqlCommand command = new SqlCommand(deleteProduct, connection);
+
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@ProductID", selectedProductID);
+            command.Transaction = connection.BeginTransaction();
+            command.ExecuteNonQuery();
+            command.Transaction.Commit();
+
+            connection.Close();
+
+            lvProducts.Items.Clear();
+            DisplayProducts();
+
         }
 
         //displays products
@@ -137,5 +169,7 @@ namespace JanesClothingDB.Presentation_Layer
                 Application.Exit();
             }
         }
+
+       
     }
 }

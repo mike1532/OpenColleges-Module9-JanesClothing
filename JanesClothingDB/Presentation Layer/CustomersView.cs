@@ -72,6 +72,38 @@ namespace JanesClothingDB.Presentation_Layer
             editForm.ShowDialog();
             lvCustomers.Items.Clear();
             DisplayCustomers();
+        }        
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (lvCustomers.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Please select a Customer to delete.");
+                return;
+            }
+
+            DialogResult dialogResult = MessageBox.Show("Are you sure you wish to delete this record?",
+                                            "Customer Delete", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.No)
+                return;
+
+            int selectedCustomerID = int.Parse(lvCustomers.SelectedItems[0].Text);
+            string deleteQuery = "sp_Customers_DeleteCustomer";
+
+            SqlConnection connection = ConnectionManager.DatabaseConnection();
+            connection.Open();
+            SqlCommand command = new SqlCommand(deleteQuery, connection);
+
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@CustomerID", selectedCustomerID);
+            command.Transaction = connection.BeginTransaction();
+            command.ExecuteNonQuery();
+            command.Transaction.Commit();
+
+            connection.Close();
+
+            lvCustomers.Items.Clear();
+            DisplayCustomers();
+               
         }
 
         //when called, will populate the ListView control with rows from the Customers table
@@ -148,6 +180,8 @@ namespace JanesClothingDB.Presentation_Layer
                 Application.Exit();
             }
         }
+
+        
     }
 }
 

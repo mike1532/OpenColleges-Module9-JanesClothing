@@ -29,14 +29,13 @@
         private void InitializeComponent()
         {
             this.btnExit = new System.Windows.Forms.Button();
-            this.btnEditProduct = new System.Windows.Forms.Button();
             this.btnCustomersView = new System.Windows.Forms.Button();
             this.btnViewProducts = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(187, 424);
+            this.btnExit.Location = new System.Drawing.Point(151, 263);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(169, 33);
             this.btnExit.TabIndex = 4;
@@ -44,19 +43,9 @@
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // btnEditProduct
-            // 
-            this.btnEditProduct.Location = new System.Drawing.Point(187, 360);
-            this.btnEditProduct.Name = "btnEditProduct";
-            this.btnEditProduct.Size = new System.Drawing.Size(169, 33);
-            this.btnEditProduct.TabIndex = 3;
-            this.btnEditProduct.Text = "E&dit Product";
-            this.btnEditProduct.UseVisualStyleBackColor = true;
-            this.btnEditProduct.Click += new System.EventHandler(this.btnEditProduct_Click);
-            // 
             // btnCustomersView
             // 
-            this.btnCustomersView.Location = new System.Drawing.Point(187, 40);
+            this.btnCustomersView.Location = new System.Drawing.Point(151, 97);
             this.btnCustomersView.Name = "btnCustomersView";
             this.btnCustomersView.Size = new System.Drawing.Size(169, 33);
             this.btnCustomersView.TabIndex = 5;
@@ -66,7 +55,7 @@
             // 
             // btnViewProducts
             // 
-            this.btnViewProducts.Location = new System.Drawing.Point(187, 232);
+            this.btnViewProducts.Location = new System.Drawing.Point(151, 180);
             this.btnViewProducts.Name = "btnViewProducts";
             this.btnViewProducts.Size = new System.Drawing.Size(169, 33);
             this.btnViewProducts.TabIndex = 6;
@@ -78,10 +67,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(578, 506);
+            this.ClientSize = new System.Drawing.Size(490, 417);
             this.Controls.Add(this.btnViewProducts);
             this.Controls.Add(this.btnCustomersView);
-            this.Controls.Add(this.btnEditProduct);
             this.Controls.Add(this.btnExit);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "frmMainForm";
@@ -94,7 +82,6 @@
 
         #endregion
         private System.Windows.Forms.Button btnExit;
-        private System.Windows.Forms.Button btnEditProduct;
         private System.Windows.Forms.Button btnCustomersView;
         private System.Windows.Forms.Button btnViewProducts;
     }
