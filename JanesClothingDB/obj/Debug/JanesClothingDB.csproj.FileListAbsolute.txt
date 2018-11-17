@@ -42,3 +42,5 @@ C:\Users\micha\Source\Repos\mike1532\OpenColleges-Module9-JanesClothing\JanesClo
 C:\Users\micha\Source\Repos\mike1532\OpenColleges-Module9-JanesClothing\JanesClothingDB\obj\Debug\JanesClothingDB.pdb
 C:\Users\micha\Source\Repos\mike1532\OpenColleges-Module9-JanesClothing\JanesClothingDB\obj\Debug\JanesClothingDB.Presentation_Layer.frmProductView.resources
 C:\Users\micha\Source\Repos\mike1532\OpenColleges-Module9-JanesClothing\JanesClothingDB\obj\Debug\JanesClothingDB.frmProductAdd.resources
+C:\Users\micha\Source\Repos\mike1532\OpenColleges-Module9-JanesClothing\JanesClothingDB\obj\Debug\JanesClothingDB.Presentation_Layer.frmCustomerSearch.resources
+C:\Users\micha\Source\Repos\mike1532\OpenColleges-Module9-JanesClothing\JanesClothingDB\obj\Debug\JanesClothingDB.Presentation_Layer.frmProductSearch.resources

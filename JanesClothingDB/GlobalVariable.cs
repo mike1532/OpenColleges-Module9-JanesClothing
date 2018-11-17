@@ -10,5 +10,7 @@ namespace JanesClothingDB
     {
         public static int selectedCustomerID;
         public static int selectedProductID;
+        public static String customerSearchCriteria;
+        public static String productSearchCriteria;
     }
 }

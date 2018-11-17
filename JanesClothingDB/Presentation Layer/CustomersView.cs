@@ -105,6 +105,14 @@ namespace JanesClothingDB.Presentation_Layer
             DisplayCustomers();
                
         }
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            GlobalVariable.customerSearchCriteria = "";
+            frmCustomerSearch searchForm = new frmCustomerSearch();
+            searchForm.ShowDialog();
+            lvCustomers.Items.Clear();
+            DisplayCustomers();
+        }
 
         //when called, will populate the ListView control with rows from the Customers table
         public void DisplayCustomers()
@@ -113,6 +121,7 @@ namespace JanesClothingDB.Presentation_Layer
             + " Customers.Address, Customers.Suburb, Customers.State, Customers.Postcode, "
             + " Customers.Gender, Customers.SendCatalogue FROM Customers INNER JOIN "
             + "Categories ON Customers.CategoryID = Categories.CategoryID";
+            selectQuery = selectQuery + " " + GlobalVariable.customerSearchCriteria;
 
 
             //calls DatabaseConnection method from ConnectionManager.cs file and instantiate DataReaderObject
@@ -181,7 +190,7 @@ namespace JanesClothingDB.Presentation_Layer
             }
         }
 
-        
+      
     }
 }
 

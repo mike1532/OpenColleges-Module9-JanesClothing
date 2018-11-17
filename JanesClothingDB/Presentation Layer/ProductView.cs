@@ -98,6 +98,14 @@ namespace JanesClothingDB.Presentation_Layer
             DisplayProducts();
 
         }
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            GlobalVariable.productSearchCriteria = "";
+            frmProductSearch searchForm = new frmProductSearch();
+            searchForm.ShowDialog();
+            lvProducts.Items.Clear();
+            DisplayProducts();
+        }
 
         //displays products
         public void DisplayProducts()
@@ -106,6 +114,7 @@ namespace JanesClothingDB.Presentation_Layer
             string selectQuery = "SELECT Products.ProductID, Brands.BrandName, Products.ProductDescription, "
             + "Products.Price, Products.GenderType, Products.ColourFast FROM Products INNER JOIN Brands "
             + " ON Products.BrandID = Brands.BrandID";
+            selectQuery = selectQuery + " " + GlobalVariable.productSearchCriteria;
 
             //calls DatabaseConnection method from ConnectionManager.cs file and instantiate DataReaderObject
             SqlConnection conn = ConnectionManager.DatabaseConnection();
